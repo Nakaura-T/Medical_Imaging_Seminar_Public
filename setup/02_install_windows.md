@@ -32,20 +32,35 @@ uv --version
 ```powershell
 git config --global user.name "GitHubのユーザー名"
 git config --global user.email "GitHubに登録したメールアドレス"
+git config --global pull.rebase false
 ```
+
+3行目は、教材を更新する（`git pull`）ときの動き方を決める設定です。自分のコミットと教員の更新を、そのまま合わせる動き方にします。
 
 ## 4. 教材を取得する
 
-TODO: 配布方法が決まったら書く
+```powershell
+mkdir C:\medimg
+cd C:\medimg
+git clone https://github.com/Nakaura-T/Medical_Imaging_Seminar_Public.git
+cd Medical_Imaging_Seminar_Public
+```
+
+教材は授業の進行に合わせて追加されます。新しい教材を受け取るときは、このフォルダで次を実行します（VS Codeのソース管理の「…」メニューの「プル」でも同じです）。
+
+```powershell
+git pull
+```
+
+公開された教材のファイルは、後から教員が書き換えることはありません。自分で編集してコミットしたファイルがあっても、`git pull` で競合は起きません。
 
 ## 5. Pythonの環境を作る
 
 ```powershell
-cd C:\medimg\<リポジトリ名>
 uv sync
 ```
 
-Python本体もuvが自動で入れるので、別にインストールする必要はありません。
+Python本体と、講座で使うライブラリがまとめて入ります。Pythonを別にインストールする必要はありません。初回は数分かかります。教材を更新したときに、ライブラリが追加されていることもあるので、`git pull` のあとにも実行します。
 
 ## 6. VS Codeで開く
 
@@ -54,10 +69,8 @@ code .
 ```
 
 1. 右下に「推奨の拡張機能をインストールしますか」と表示されたら、インストールを選ぶ
-2. GitHubアカウントでCopilotにサインインする
-3. ノートブックを開き、右上の「カーネルの選択」で `.venv` を選ぶ
-
-TODO: 各手順の画面の画像
+2. 左下のアカウントのアイコンから、GitHubアカウントでサインインし、Copilotを使えるようにする
+3. ノートブック（`.ipynb`）を開き、右上の「カーネルの選択」で `.venv` を選ぶ
 
 ## 7. 動作を確かめる
 
@@ -65,24 +78,29 @@ TODO: 各手順の画面の画像
 
 ## 8. 3D Slicerを入れる（第5回までに）
 
-範囲2と範囲3で使います。ダウンロードページ（https://download.slicer.org/）からWindows版を入れます。
-
-TODO: インストール手順と画面の画像
+範囲2と範囲3で使います。手順は [2-2の手順書](../units/2_dicom/2-2_slicer_guide.md) の「1. 3D Slicerを入れる」を見てください。
 
 ## 9. うまくいかないとき
 
 ### `winget` が見つからない
 
-TODO
+Microsoft Storeで「アプリ インストーラー」を検索し、更新してから、PowerShellを開き直します。
 
 ### `code`、`git`、`uv` が見つからない
 
-PowerShellを開き直してから、もう一度実行してください。それでも見つからない場合は TODO
+PowerShellを閉じて開き直してから、もう一度実行します。それでも見つからない場合は、パソコンを再起動します。
 
 ### カーネルの一覧に `.venv` が表示されない
 
-TODO
+1. リポジトリのフォルダで `uv sync` を実行したか確かめる
+2. VS Codeで `Ctrl+Shift+P` を押し、「Python: Select Interpreter」で `.venv` の中のPythonを選ぶ
+3. `Ctrl+Shift+P` で「Developer: Reload Window」を実行し、もう一度カーネルを選ぶ
+
+### `git pull` でエラーが出た
+
+表示されたメッセージをコピーして、Copilotの解説役に意味を聞きます。それでも解決しない場合は、自分の作業を別のフォルダにコピーして残してから、教員に相談してください。
 
 ### Windowsのユーザー名に日本語が含まれている
 
-TODO
+多くの場合はそのまま使えます。インストールや `uv sync` でパスに関するエラーが出た場合は、教員に相談してください。
+

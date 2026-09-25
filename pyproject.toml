@@ -12,6 +12,7 @@ dependencies = [
     "scikit-image",
     "scikit-learn",
     "pydicom",
+    "idc-index",
     "SimpleITK",
     "medmnist",
     "medsegbench",
@@ -19,8 +20,20 @@ dependencies = [
     "torch",
     "torchvision",
     "segmentation-models-pytorch",
+    "pywavelets>=1.10.0",
 ]
 
 [tool.uv]
 # 講座用の環境であり、パッケージとして配布しない
 package = false
+
+# Linux では CPU 版の PyTorch を使う（PyPI の Linux 版は GPU 用で容量が大きいため）。
+# Windows と Mac は PyPI の版がそのまま CPU で動く。
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
+torchvision = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
