@@ -1,0 +1,26 @@
+# Python
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# データ（README.md だけ管理する）
+data/*
+!data/README.md
+
+# 医用画像と学習済みの重み（誤ってコミットしないように）
+*.dcm
+*.nii
+*.nii.gz
+*.npz
+*.pt
+*.pth
+
+# 出力
+outputs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ResWS: 同期対象外フォルダ
+.NoSync/

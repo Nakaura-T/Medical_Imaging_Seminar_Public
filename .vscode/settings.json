@@ -1,0 +1,4 @@
+{
+  "chat.useAgentsMdFile": true,
+  "jupyter.notebookFileRoot": "${workspaceFolder}"
+}

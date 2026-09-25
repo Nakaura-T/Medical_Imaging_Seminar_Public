@@ -1,0 +1,26 @@
+[project]
+name = "medical-imaging-course"
+version = "0.1.0"
+description = "医療画像認識 演習用の環境"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "ipykernel",
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "scipy",
+    "scikit-image",
+    "scikit-learn",
+    "pydicom",
+    "SimpleITK",
+    "medmnist",
+    "medsegbench",
+    "streamlit",
+    "torch",
+    "torchvision",
+    "segmentation-models-pytorch",
+]
+
+[tool.uv]
+# 講座用の環境であり、パッケージとして配布しない
+package = false
