@@ -9,7 +9,7 @@
 
 | 回 | 範囲 | 内容 | 教材 |
 |---|---|---|---|
-| 1（9/28） | ガイダンス | 講座の進め方、環境構築 | [setup/](setup/)、[0](units/0_setup/0_setup_check.ipynb) |
+| 1（9/28） | ガイダンス | 講座の進め方、環境構築、自分のGitHubへの保存 | [0解説](units/0_setup/0_setup_guide.md)、[setup/](setup/)、[0](units/0_setup/0_setup_check.ipynb) |
 | 2 | 範囲1 医用画像の種類と原理 | 医用画像の種類とX線・CTの原理 | [1-1](units/1_modalities/1-1_xray_ct.ipynb) |
 | 3 | | MRIの原理と画像の周波数 | [1-2](units/1_modalities/1-2_mri.ipynb) |
 | 補足 | | 画質改善技術（再構成フィルタ、逐次近似再構成、ノイズ除去） | [1-3](units/1_modalities/1-3_image_quality.ipynb) |
@@ -36,12 +36,14 @@
 
 ### 範囲1〜4（VS Code）
 
-1. リポジトリのフォルダで `git pull` と `uv sync` を実行し、教材と環境を最新にする
+1. 授業のページからその回の教材をダウンロードし、講座のフォルダの `units` に入れてコミットする（新しい `pyproject.toml` と `uv.lock` があれば上書きして `uv sync` を実行する）
 2. ノートブックを開き、カーネルに `.venv` を選ぶ
 3. 「動かしてみる」のセルを上から実行する
 4. AIに頼む前に、ここまでの状態をコミットする
 5. AIに頼み、差分を見て採用するかどうかを決める
-6. チェックリストで結果を確かめ、振り返りを書いてコミットする
+6. チェックリストで結果を確かめ、振り返りを書いてコミットし、「変更の同期」で自分のGitHubに保存する
+
+詳しい流れは、第1回の解説（[0_setup_guide.md](units/0_setup/0_setup_guide.md)）の9章にあります。
 
 ### 範囲5〜6（Colab）
 

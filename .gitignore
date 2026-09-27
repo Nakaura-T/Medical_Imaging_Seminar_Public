@@ -22,5 +22,10 @@ outputs/
 .DS_Store
 Thumbs.db
 
+# --- ここから下は教員のリポジトリだけで使う（配布用のzipには入れない） ---
+
+# 配布用のzipの出力先
+dist/
+
 # ResWS: 同期対象外フォルダ
 .NoSync/

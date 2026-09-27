@@ -1,4 +1,5 @@
 {
   "chat.useAgentsMdFile": true,
-  "jupyter.notebookFileRoot": "${workspaceFolder}"
+  "jupyter.notebookFileRoot": "${workspaceFolder}",
+  "git.enableSmartCommit": true
 }

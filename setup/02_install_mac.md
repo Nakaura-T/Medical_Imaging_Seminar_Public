@@ -14,6 +14,6 @@
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-## 3〜9. 以降の手順
+## 3〜10. 以降の手順
 
-[Windows版](02_install_windows.md)の3以降と同じです。3D SlicerはMac版を入れます。パスは `C:\medimg` を `~/medimg` に読み替えてください。
+[Windows版](02_install_windows.md)の3以降と同じです。3D SlicerはMac版を入れます。パスは `C:\medimg` を `~/medimg` に、`C:\medimg\medical_imaging` を `~/medimg/medical_imaging` に読み替えてください。zipはダブルクリックで展開し、できた `medical_imaging` フォルダを `~/medimg` に移します。
